@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def devicedb_list(request):
+    return render(request, 'devicedb/devicedb_list.html', {})
