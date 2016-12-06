@@ -1,10 +1,134 @@
-<html>
-    <head>
-        <title>Database</title>
-    </head>
-    <body>
-        {% for pc in pcs %}
-       	<p>{{ pc }}</p>
-    	{% endfor %}
-    </body>
-</html>
+{% extends 'devicedb/base.html' %}
+
+{% block content %}
+	
+		<div class="container first">
+			<div class="row block">
+				<div class="col-md-12">
+					<h3 class="up">Таблица Personal computers</h3>
+					<p class="under">Полная таблица из базы данных, чтобы отсортировать продукт по категории, <br> нажмите на заголовок таблицы</p>
+					<table id="myTable" class="tablesorter table">
+						<thead>
+							<tr>
+								<th>PC id</th>
+								<th>Model name</th>
+								<th>CPU core</th>
+								<th>CPU speed, GHz</th>
+								<th>RAM, GB</th>
+								<th>HDD size, GB</th>
+								<th>Price, rub</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for pc in pcs %}
+							<tr>
+								<td>{{ pc.pc_id }}</td>
+								<td>{{ pc.model_name }}</td>
+								<td>{{ pc.cpu_core }}</td>
+								<td>{{ pc.cpu_speed }}</td>
+								<td>{{ pc.ram }}</td>
+								<td>{{ pc.hdd_size }}</td>
+								<td>{{ pc.price }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row block">
+				<div class="col-md-12">
+					<h3 class="up">Таблица Notebooks</h3>
+					<p class="under">Полная таблица из базы данных, чтобы отсортировать продукт по категории, <br> нажмите на заголовок таблицы</p>
+					<table id="myTable2" class="tablesorter table">
+						<thead>
+							<tr>
+								<th>Notebook id</th>
+								<th>Model name</th>
+								<th>CPU core</th>
+								<th>CPU speed, GHz</th>
+								<th>HDD type</th>
+								<th>HDD size, GB</th>
+								<th>Screen size, inches</th>
+								<th>Price, rub</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for notebook in notebooks %}
+							<tr>
+								<td>{{ notebook.nb_id }}</td>
+								<td>{{ notebook.model_name }}</td>
+								<td>{{ notebook.cpu_core }}</td>
+								<td>{{ notebook.cpu_speed }}</td>
+								<td>{{ notebook.hdd_type }}</td>
+								<td>{{ notebook.hdd_size }}</td>
+								<td>{{ notebook.screen_size }}</td>
+								<td>{{ notebook.price }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row block">
+				<div class="col-md-12">
+					<h3 class="up">Таблица Smartphones</h3>
+					<p class="under">Полная таблица из базы данных, чтобы отсортировать продукт по категории, <br> нажмите на заголовок таблицы</p>
+					<table id="myTable3" class="tablesorter table">
+						<thead>
+							<tr>
+								<th>Smartphone id</th>
+								<th>Model name</th>
+								<th>CPU core</th>
+								<th>CPU speed, GHz</th>
+								<th>Flash_size, GB</th>
+								<th>OS</th>
+								<th>LTE</th>
+								<th>Price, rub</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for smartphone in smartphones %}
+							<tr>
+								<td>{{ smartphone.sp_id }}</td>
+								<td>{{ smartphone.model_name }}</td>
+								<td>{{ smartphone.cpu_core }}</td>
+								<td>{{ smartphone.cpu_speed }}</td>
+								<td>{{ smartphone.flash_size }}</td>
+								<td>{{ smartphone.os }}</td>
+								<td>{{ smartphone.lte }}</td>
+								<td>{{ smartphone.price }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row block">
+				<div class="col-md-12">
+					<h3 class="up">Таблица Products</h3>
+					<p class="under">Полная таблица из базы данных, чтобы отсортировать продукт по категории, <br> нажмите на заголовок таблицы</p>
+					<table id="myTable4" class="tablesorter table">
+						<thead>
+							<tr>
+								<th>Vendor</th>
+								<th>Model name</th>
+								<th>Product type</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for product in products %}
+							<tr>
+								<td>{{ product.vendor }}</td>
+								<td>{{ product.model_name }}</td>
+								<td>{{ product.product_type }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+{% endblock content %}
