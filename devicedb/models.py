@@ -11,6 +11,9 @@ class Pc(models.Model):
     hdd_size = models.CharField(max_length=200)
     price = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.model_name
+
 class Notebook(models.Model):
     nb_id = models.CharField(max_length=200)
     model_name = models.CharField(max_length=200)
@@ -20,6 +23,9 @@ class Notebook(models.Model):
     hdd_size = models.CharField(max_length=200)
     screen_size = models.CharField(max_length=200)
     price = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.model_name
 
 class Smartphone(models.Model):
     sp_id = models.CharField(max_length=200)
@@ -31,7 +37,13 @@ class Smartphone(models.Model):
     lte = models.CharField(max_length=200)
     price = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.model_name
+
 class Product(models.Model):
     vendor = models.CharField(max_length=200)
     model_name = models.CharField(max_length=200)
     product_type = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.model_name
